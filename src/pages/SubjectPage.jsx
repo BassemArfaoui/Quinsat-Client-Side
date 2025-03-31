@@ -1,5 +1,8 @@
 import { useParams , useNavigate } from "react-router-dom";
 import SubjectCard from "../components/menu/SubjectCard";
+import { FaGreaterThan } from "react-icons/fa";
+
+
 
 function SubjectPage() {
   const { level } = useParams();
@@ -7,32 +10,39 @@ function SubjectPage() {
 
   return (
     <div>
-      <h1 className="text-[28px]  mt-6 mb-10 text-gray-700 text-center">
-
-        <span
-          className="bg-s px-2 py-1 rounded-lg ml-6 text-gray-400 cursor-pointer"
-          onClick={() => {
-            navigate("/menu");
-          }}
-        >
-          Branches
-        </span>
-
-
-    { level !== "cba" && level !== "mpi" &&   <>
-        <span className="text-3xl">{">"}</span>
+      <div className="flex justify-center">
+        <h1 className="text-[28px]  mt-6 mb-10 text-gray-700 text-center flex items-center">
           <span
-            className="bg-s px-2 py-1 rounded-lg text-gray-400 cursor-pointer"
+            className="bg-s px-2 py-1 rounded-lg ml-6 text-gray-400 cursor-pointer"
             onClick={() => {
-              navigate(`/classes/${level.slice(0,-1)}`);
+              navigate("/menu");
             }}
           >
-            Classes
+            Branches
           </span>
-        </>}
-          <span className="text-3xl">{"> "}</span>
-        <span>Subjects</span>
-      </h1>
+
+          {level !== "cba" && level !== "mpi" && (
+            <>
+              <span>
+                <FaGreaterThan className="text-xl" />
+              </span>
+
+              <span
+                className="bg-s px-2 py-1 rounded-lg text-gray-400 cursor-pointer"
+                onClick={() => {
+                  navigate(`/classes/${level.slice(0, -1)}`);
+                }}
+              >
+                Classes
+              </span>
+            </>
+          )}
+          <span className="text-3xl">
+            <FaGreaterThan className="text-xl" />
+          </span>
+          <span className="ml-2">Subjects</span>
+        </h1>
+      </div>
 
       <div className="flex justify-center mt-7 flex-wrap gap-x-6 gap-y-6 pb-5">
         <SubjectCard

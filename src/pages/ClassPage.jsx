@@ -1,5 +1,6 @@
 import { useParams, useLocation , useNavigate} from "react-router-dom";
 import LevelCard from "../components/menu/ClassCard";
+import { FaGreaterThan } from "react-icons/fa";
 
 function ClassPage() {
   const { branch } = useParams();
@@ -17,10 +18,22 @@ function ClassPage() {
 
   return (
     <div>
-     <h1 className='text-[28px]  mt-6 mb-10 text-gray-700 text-center'><span className='bg-s px-2 py-1 rounded-lg ml-6 text-gray-400 cursor-pointer' onClick={()=>{navigate("/menu")}} > Branches</span>
-     <span className="text-3xl">{"> "}</span>
-     <span >Classes</span>
-     </h1>
+      <div className="flex justify-center">
+        <h1 className="text-[28px]  mt-6 mb-10 text-gray-700 text-center flex items-center">
+          <span
+            className="px-2 rounded-lg ml-6 text-gray-400 cursor-pointer"
+            onClick={() => {
+              navigate("/menu");
+            }}
+          >
+            Branches
+          </span>
+          <span className="flex justify-center items-center">
+            <FaGreaterThan className="text-xl" />
+          </span>
+          <span className="ml-2">Classes</span>
+        </h1>
+      </div>
 
       <div className="flex justify-center mt-7 flex-wrap gap-x-6 gap-y-6 pb-5">
         <LevelCard
