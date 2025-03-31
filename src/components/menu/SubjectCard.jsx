@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
 
-function SubjectCard({ level, fullname, theme }) {
+function SubjectCard({id , level, fullname, theme }) {
     const navigate = useNavigate();
 
     const handleNavigation = () => {
      
-        navigate(`/quizzes/${level}`);
+        navigate(`/quizzes/${level}/${id}`);
    
     };
   

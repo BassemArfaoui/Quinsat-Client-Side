@@ -15,7 +15,7 @@ function ClassCard({ branch , level , fullname, theme }) {
         <div
           className={`flex justify-center items-center h-13 ${theme} rounded-t-3xl`}
         >
-          <h1 className="text-xl font-bold font-roboto-mono text-white uppercase  ">
+          <h1 className="text-xl font-bold font-roboto-mono text-white uppercase">
             {branch + level}
           </h1>
         </div>

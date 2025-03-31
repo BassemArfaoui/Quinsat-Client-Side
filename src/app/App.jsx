@@ -23,10 +23,10 @@ function App() {
 
             <Routes>
               <Route path="/" element={<HomePage/>} />
-              <Route path="/menu" element={<BranchPage />} />
+              <Route path="/branches" element={<BranchPage />} />
               <Route path="/classes/:branch" element={<ClassPage />} />
               <Route path="/subjects/:level" element={<SubjectPage />} />
-              <Route path="/quizzes/:level" element={<QuizzPage />} />
+              <Route path="/quizzes/:level/:subject_id" element={<QuizzPage />} />
               <Route path="/favourite" element={<FavouritePage />} />
               <Route path="/add" element={<AddPage />} />
               <Route path="/settings" element={<SettingsPage />} />
